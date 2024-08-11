@@ -1,0 +1,67 @@
+<html>
+<head>
+<style>
+/* Apply styles to the form wrapper and its child elements */
+.form-wrapper {
+  width: 200px;
+  border-radius: 6px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+/* Center the form on the page */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Enlarge the form */
+.form-wrapper {
+  width: 400px;
+  font-size: 18px;
+}
+
+
+</style>
+</head>
+<body>
+<form action="view1m.php" method="post" enctype="multipart/form-data">
+  <div class="form-wrapper">
+    <label for="cin">CIN:</label>
+    <input type="text" name="cin" id="cin">
+    <input type="submit" value="Submit" name="sub">
+  </div>
+</form>
+</body>
+</html>

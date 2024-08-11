@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Database Form</title>
+	<style>
+		body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+select {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+    border-color: #ccc;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    background-color: #3e8e41;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+button[type="submit"] {
+    background-color: #3CB371;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+	</style>
+	<script type="text/javascript">
+		function showTableFields() {
+			var selectBox = document.getElementById("database-select");
+			var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+			var tableFields = document.getElementById("table-fields");
+			if (selectedValue == "select-database") {
+				tableFields.style.display = "none";
+			} else {
+				tableFields.style.display = "block";
+			}
+		}
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="heady">
+        <span class="Lspan"><a href='Admin.php'><button class="iconhome"><i class="fa fa-home"></i></button></a></span>
+        <span><center><h1>Department of Computer Science</h1></center></span>
+</div>
+	<div class="container">
+		<h1>Database Form</h1>
+		<form action="ResolveUpdate.php" method="POST">
+			<div class="form-group">
+				<label for="database-select">Select Database:</label>
+				<select id="database-select" name="database-select" onchange="showTableFields()">
+					<option value="" disabled selected>--Select Database--</option>
+            <option value="yop2023">Year of Passing :- 2023</option>
+            <option value="yop2022">Year of Passing :- 2022</option>
+            <option value="yop2021">Year of Passing :- 2021</option>
+            <option value="yop2020">Year of Passing :- 2020</option>
+            <option value="yop2019">Year of Passing :- 2019</option>
+            <option value="yop2018">Year of Passing :- 2018</option>
+            <option value="yop2017">Year of Passing :- 2017</option>
+            <option value="yop2016">Year of Passing :- 2016</option>
+            <option value="yop2015">Year of Passing :- 2015</option>
+            <option value="yop2014">Year of Passing :- 2014</option>
+            <option value="yop2013">Year of Passing :- 2013</option>
+            <option value="yop2012">Year of Passing :- 2012</option>
+			<option value="yop2011">Year of Passing :- 2011</option>
+			<option value="yop2010">Year of Passing :- 2010</option>
+				</select>
+			</div>
+			<div class="form-group" id="table-fields" style="display:none;">
+				<label for="table-select">Select Table:</label><br>
+				<select id="table-select" name="table-select" required>
+					<option value="" disabled selected>--Select Table--</option>
+					<option value="studentinfo">Student Information Table</option>
+					<option value="reginfo">Registration Information Table</option>
+					<option value="company">Company Information Table</option>
+					<option value="placementinfo">Placement Information Table</option>
+				</select>
+				<br><br>
+			<button type="submit" >Submit</button>
+		</form>
+	</div>
+</body>
+</html>

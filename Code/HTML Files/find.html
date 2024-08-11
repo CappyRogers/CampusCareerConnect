@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Placement Status</title>
+	<style type="text/css">
+		table {
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		table td, table th {
+			border: 1px solid black;
+			padding: 8px;
+		}
+
+		h1 {
+			margin-top: 30px;
+		}
+
+		p {
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+<?php
+// Get the form data
+$dbname = $_POST["year_of_passing"];
+$cin = $_POST["cin"];
+
+// Database connection variables
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if CIN exists in studentinfo table
+$sql = "SELECT * FROM studentinfo WHERE cin='$cin'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+	echo "<p>CIN: " . $cin . " exists in the database</p>";
+  // CIN exists, check registration status in reginfo table
+  $sql = "SELECT * FROM reginfo WHERE CIN='$cin' AND RegStat='Yes'";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    // CIN registered
+    echo "<p>CIN: " . $cin . " had registered for placement drive</p>";
+	$sql="select CIN, Company_Name, Package, AppointedRole 
+	from placementinfo p inner join company c on p.Company_ID=c.Company_ID and CIN='$cin'";
+	$result = $conn->query($sql);
+	if($result->num_rows>0)
+	{
+		echo "<h1>Placement Status</h1>";
+		$row=mysqli_fetch_assoc($result);
+		$a=$row['CIN'];
+		$b=$row['Company_Name'];
+		$c=$row['AppointedRole'];
+		$d=$row['Package'];
+		echo "<table border=2 cellspacing=0 cellpadding=4>";
+		echo "<tr><td>$a</td><td>$b</td><td>$c</td><td>$d</td></tr>";
+		echo "</table><br><br>"; 
+	}
+	else
+	{
+		echo "<p>CIN: " . $cin . " is not placed </p>";
+	}
+	
+  } else {
+    // CIN not registered
+    echo "<p>CIN: " . $cin . " had not registered for placement drive</p>";
+  }
+} else {
+  // CIN does not exist
+  echo "<p>CIN: " . $cin . " does not exist in the database</p>";
+}
+
+// Close connection
+$conn->close();
+?>
+</body>
+</html>

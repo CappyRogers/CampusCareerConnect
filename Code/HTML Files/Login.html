@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+  function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+<html>
+  <head>
+    <title>ADMIN LOGIN</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      form {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 550px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #444;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 40px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      button[type="submit"]{
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 30px;
+        width: 120px;
+        margin-left: 115px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
+      button[type="submit"]:hover
+      {
+        background-color: #388e3c;
+      }
+      .error {
+        color: red;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="validate.php" method="post">
+      <h2>ADMIN LOGIN</h2>
+
+      <?php if (isset($_GET['error'])) { ?>
+      <p class="error"><?php echo $_GET['error']; ?></p>
+      <?php } ?>
+
+      <label>CIN</label>
+      <input type="text" name="uname" placeholder="XX-XXX-X-XX-XXXX" pattern="^\d{2}-\d{3}-\d-\d{2}-\d{4}$" autocomplete="off" required />
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Password" autocomplete="off" id="myInput" required />
+      <input type="checkbox" onclick="myFunction()">Show Password<br><br>
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>

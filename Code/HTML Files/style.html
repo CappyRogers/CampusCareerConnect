@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOMEPAGE</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <table class="t1">
+                <tr>
+                    <td><img src="icon.jpg" alt="logo" width="100" height="100"></td>
+                    <th>
+                        <h1 class="hone">CampusCareerConnect [ C³ ]</h1>
+                    </th>
+                </tr>
+            </table>
+            <br>
+            <b><I>A Web-Based Placement Database Model</I></b>
+        </div>
+        <div class="profile">
+            <a href="Login.html" class="admil"><b>ADMIN LOGIN</b></a>
+        </div>
+    </div>
+
+    <!--2nd row-->
+    <div class="grid-container2">
+        <div class="sidebar">
+            <h1>Year of Passing</h1>
+            <button type="button" class="collapsible">1990-1994</button>
+            <div class="content">
+                <p><button type="button" class="bmod">1990</button></p>
+                <p><button type="button" class="bmod">1991</button></p>
+                <p><button type="button" class="bmod">1992</button></p>
+                <p><button type="button" class="bmod">1993</button></p>
+                <p><button type="button" class="bmod">1994</button></p>
+            </div>
+            <button type="button" class="collapsible">1995-1999</button>
+            <div class="content">
+                <p><button type="button" class="bmod">1995</button></p>
+                <p><button type="button" class="bmod">1996</button></p>
+                <p><button type="button" class="bmod">1997</button></p>
+                <p><button type="button" class="bmod">1998</button></p>
+                <p><button type="button" class="bmod">1999</button></p>
+            </div>
+            <button type="button" class="collapsible">2000-2004</button>
+            <div class="content">
+                <p><button type="button" class="bmod">2000</button></p>
+                <p><button type="button" class="bmod">2001</button></p>
+                <p><button type="button" class="bmod">2002</button></p>
+                <p><button type="button" class="bmod">2003</button></p>
+                <p><button type="button" class="bmod">2004</button></p>
+            </div>
+            <button type="button" class="collapsible">2005-2009</button>
+            <div class="content">
+                <p><button type="button" class="bmod">2005</button></p>
+                <p><button type="button" class="bmod">2006</button></p>
+                <p><button type="button" class="bmod">2007</button></p>
+                <p><button type="button" class="bmod">2008</button></p>
+                <p><button type="button" class="bmod">2009</button></p>
+            </div>
+            <button type="button" class="collapsible">2010-2014</button>
+            <div class="content">
+                <p><button type="button" class="bmod">2010</button></p>
+                <p><button type="button" class="bmod">2011</button></p>
+                <p><button type="button" class="bmod">2012</button></p>
+                <p><button type="button" class="bmod">2013</button></p>
+                <p><button type="button" class="bmod">2014</button></p>
+            </div>
+            <button type="button" class="collapsible">2015-2019</button>
+            <div class="content">
+                <p><button type="button" class="bmod">2015</button></p>
+                <p><button type="button" class="bmod">2016</button></p>
+                <p><button type="button" class="bmod">2017</button></p>
+                <p><button type="button" class="bmod">2018</button></p>
+                <p><button type="button" class="bmod">2019</button></p>
+            </div>
+            <button type="button" class="collapsible">2020-2023</button>
+            <div class="content">
+                <p><button type="button" class="bmod">2020</button></p>
+                <p><button type="button" class="bmod">2021</button></p>
+                <p><button type="button" class="bmod">2022</button></p>
+                <p><button type="button" class="bmod">2023</button></p>
+            </div>
+        </div>
+        <div class="header" style="height: 570px;" >
+            <div id="myChart" style="width:100%; height: 100%; margin: auto;">
+            </div>
+        </div>
+        <div class="sidebar">
+        </div>
+    </div>
+    <script>
+    function toggleContent(content) {
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    }
+
+    // collapse all open content
+    function collapseAllOpenContent() {
+        const colls = document.getElementsByClassName('collapsible');
+        for (const coll of colls) {
+            if (coll.classList.contains('active')) {
+                coll.classList.remove('active');
+                toggleContent(coll.nextElementSibling);
+            }
+        }
+    }
+
+    function toggleContent(content) {
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    }
+
+    // collapse all open content
+    function collapseAllOpenContent() {
+        const colls = document.getElementsByClassName('collapsible');
+        for (const coll of colls) {
+            if (coll.classList.contains('active')) {
+                coll.classList.remove('active');
+                toggleContent(coll.nextElementSibling);
+            }
+        }
+    }
+
+    const colls = document.getElementsByClassName('collapsible');
+    for (const coll of colls) {
+        coll.addEventListener('click', function() {
+            if (!this.classList.contains('active')) {
+                collapseAllOpenContent();
+            }
+            this.classList.toggle('active');
+            toggleContent(this.nextElementSibling);
+        });
+    }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      google.charts.load('current', { 'packages': ['corechart'] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+              ['Contry', 'Mhl'],
+              ['PWC', 54.8],
+              ['Accenture', 48.6],
+              ['DE-Shaw & Co', 44.4],
+              ['TCS', 23.9],
+              ['Quantiphi', 14.5]
+          ]);
+
+          var options = {
+              title: 'Top Recruiters of 2020',
+              is3D: true
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+          chart.draw(data, options);
+      }
+    </script>
+
+</body>
+</html>

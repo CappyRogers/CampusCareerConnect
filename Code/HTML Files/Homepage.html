@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOMEPAGE</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poltawski+Nowy:ital,wght@1,500&display=swap" rel="stylesheet">
+
+</head>
+<style>p{
+			font-family: 'Poltawski Nowy', serif;
+     		font-weight: 300;
+     		font-size: 18px;
+     		text-shadow: -4px 2px 1px rgba(0, 0, 0, 0.4);
+     	}
+		.hone{
+		font-family: 'Dancing Script', cursive;
+		font-size:40px;
+		}
+		</style>
+
+<body>
+    <div class="grid-container" >
+        <div class="header">
+            <table class="t1">
+                <tr>
+                    <td><img src="logo.png" alt="logo" width="100" height="100"></td>
+                    <th>
+                        <h1 class="hone">CampusCareerConnect</h1>
+                    </th>
+                </tr>
+            </table>
+            <br>
+            <b><I>A Web-Based Placement Database Model</I></b>
+        </div>
+        <div class="profile">
+            <a href="Login.html" class="admil"><b>ADMIN LOGIN</b></a>
+        </div>
+    </div>
+
+    <!--2nd row-->
+    <div class="grid-container2">
+        <div class="sidebar" style="background-image: url('peaks.svg');">
+            <h1>Year of Passing</h1>
+            <button type="button" class="collapsible">2010-2012</button>
+            <div class="content">
+                <p><button type="button" class="bmod" onclick="location.href='view2010.php';">2010
+				</button></p>
+                <p><button type="button" class="bmod" onclick="location.href='view2011.php';">2011
+				</button></p>
+                <p><button type="button" class="bmod" onclick="location.href='view2012.php';">2012
+				</button></p>
+            </div>
+            <button type="button" class="collapsible">2013-2015</button>
+            <div class="content">
+                <p><button type="button" class="bmod" onclick="location.href='view2013.php';">2013
+				</button></p>
+                <p><button type="button" class="bmod" onclick="location.href='view2014.php';">2014
+				</button></p>
+                <p><button type="button" class="bmod" onclick="location.href='view2015.php';">2015
+				</button></p>
+            </div>
+            <button type="button" class="collapsible">2016-2018</button>
+            <div class="content">
+                <<p><button type="button" class="bmod" onclick="location.href='view2016.php';">2016
+				</button></p>
+                <p><button type="button" class="bmod" onclick="location.href='view2017.php';">2017
+				</button></p>
+                <p><button type="button" class="bmod" onclick="location.href='view2018.php';">2018
+				</button></p>
+            </div>
+			 <button type="button" class="collapsible">2019-2021</button>
+            <div class="content">
+                <p><button type="button" class="bmod" onclick="location.href='view2019.php';">2019
+				</button></p>
+                <p><button type="button" class="bmod" onclick="location.href='view2020.php';">2020
+				</button></p>
+                <p><button type="button" class="bmod" onclick="location.href='view2021.php';">2021
+				</button></p>
+            </div>
+			<button type="button" class="collapsible">2022</button>
+            <div class="content">
+                <p><button type="button" class="bmod" onclick="location.href='view2022.php';">2022
+				</button></p>
+            </div>
+			
+        </div>
+        <div class="header" style="height: 550px;" >
+            <div id="myChart" style="width:100%; height: 100%; margin: auto; background-image: url('peaks2.svg');background-repeat:no-repeat; background-size: contain;">
+            </div>
+        </div>
+        <div class="sidebar" style="background-image: url('peaks.svg');">
+		<p>We recognize the significance of making informed decisions regarding one's education and career, and our website aims to assist you in this regard. Our platform provides an extensive range of data on placement statistics, including the number of students placed, companies that recruit from the college, average salary packages, and other relevant information.<br><br>
+				Thank you for choosing our website as your source of information. We wish you all the best in your education and career journey!</p>
+        </div>
+    </div>
+    <script>
+    function toggleContent(content) {
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    }
+
+    // collapse all open content
+    function collapseAllOpenContent() {
+        const colls = document.getElementsByClassName('collapsible');
+        for (const coll of colls) {
+            if (coll.classList.contains('active')) {
+                coll.classList.remove('active');
+                toggleContent(coll.nextElementSibling);
+            }
+        }
+    }
+
+    function toggleContent(content) {
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    }
+
+    // collapse all open content
+    function collapseAllOpenContent() {
+        const colls = document.getElementsByClassName('collapsible');
+        for (const coll of colls) {
+            if (coll.classList.contains('active')) {
+                coll.classList.remove('active');
+                toggleContent(coll.nextElementSibling);
+            }
+        }
+    }
+
+    const colls = document.getElementsByClassName('collapsible');
+    for (const coll of colls) {
+        coll.addEventListener('click', function() {
+            if (!this.classList.contains('active')) {
+                collapseAllOpenContent();
+            }
+            this.classList.toggle('active');
+            toggleContent(this.nextElementSibling);
+        });
+    }
+    </script>
+   
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Country', 'Mhl'],
+      ['PWC', 6],
+      ['Accenture', 1],
+      ['ICICI Bank', 6],
+      ['Quantiphi Analytics', 3]
+    ]);
+
+    var options = {
+      title: 'Top Recruiters of 2023',
+      is3D: true,
+      backgroundColor: "",
+      titleTextStyle: {
+        color: "white",
+        fontSize: 32 // Adjust the font size as per your preference
+      },
+      legend: {
+        textStyle: {
+          color: 'white',
+		  fontSize: 15 
+        }
+      }
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+    chart.draw(data, options);
+  }
+</script>
+
+</body>
+</html>
