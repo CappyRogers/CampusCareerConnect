@@ -1,0 +1,115 @@
+    .header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: linear-gradient(to right, #00A580, #193222, #00A580);
+    border-bottom: 2px solid #fff;
+    margin: 0px;
+    height: 105px;
+    }
+.Lspan{
+        width: 20%;
+        height: auto;
+        margin-left: 5%;
+    }
+    .Cspan{
+        width: 80%;
+        margin: auto;
+        margin-left: 11%;
+        color: #fff;
+    }
+    .Rspan{
+        width: 20%;
+        height: auto;
+        margin-left: 80%;
+    }
+    .icon{
+            transition: all 100ms linear;
+            background-color: #424242;
+            margin-top: 15%;
+            height: 60%;
+			width: 70%;
+            font-size: 26;
+            border-radius: 20px;
+            border: 3px solid #29A19C;
+            text-align: center;
+            color: #6DECB9;
+            cursor: pointer;
+        }
+        .icon:hover{
+            transition: all 200ms linear;
+            background-color: #29A19C;
+            border:  3px solid #fff;
+            color: #fff;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+    body {
+            font-family: Arial, sans-serif;
+            background-image: url(comsvg.svg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            border: 3px solid white;
+            color: #fff;
+            padding: 2%;
+			width:auto;
+            font-family: 'Bruno Ace SC', cursive;
+        }
+        table {
+            border-collapse: collapse;
+            width: 40%;
+            margin: auto;
+            margin-top: 2%;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+            font-size: 28px;
+        }
+        th {
+            font-family: 'Bruno Ace SC', cursive;
+            background-color: #424242;
+            color: #fff;
+            padding: 15px;
+            font-size: 36px;
+            font-weight: bold;
+            position: sticky;
+            border: 1px solid #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+        tr:hover {
+            transition: all 100ms linear;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            background-color: #29A19C;
+            color: #fff;
+          }
+		  .back{
+            transition: all 100ms linear;
+            background-color: #fff;
+            margin: auto;
+            margin-left: 37%;
+            height: 6%;
+            width: 25%;
+            font-size: 22px;
+            border-radius: 5px;
+            border: 3px solid #00A580;
+            text-align: center;
+            color: #00A580;
+            cursor: pointer;
+        }
+        .back:hover{
+            transition: all 200ms linear;
+            background-color: #193222;
+            border:  3px solid #FFF;
+            color: #fff;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }

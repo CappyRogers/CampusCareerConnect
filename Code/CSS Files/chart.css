@@ -1,0 +1,72 @@
+	body{
+        font-family: Arial, sans-serif;
+        background-image: url(polybg.svg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+    }
+	.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: linear-gradient(to right, #ECF9FF,#FFACAC,#ECF9FF);
+    border-bottom: 2px solid #fff;
+    margin: 0px;
+    height: 105px;
+    }
+    h1 {
+            text-align: center;
+            border: 3px solid white;
+            color: #fff;
+            padding: 1%;
+            font-family: 'Bruno Ace SC', cursive;
+            margin-top: 2%;
+            background-color: rgba(0, 0, 0, 0.61);
+	  		backdrop-filter: blur(5px);
+        }
+	.chart{
+		height: 350px;
+		width: auto;
+		margin: 1%;
+		border: 2px solid ghostwhite;
+		background-color: rgba(0, 0, 0, 0.61);
+	  	backdrop-filter: blur(5px);
+	}
+    .Lspan{
+        width: 20%;
+        height: auto;
+        margin-left: 5%;
+    }
+    .Cspan{
+        width: 60%;
+        margin: auto;
+        margin-left: 22%;
+        color: #fff;
+    }
+    .Rspan{
+        width: 20%;
+        height: auto;
+        margin-left: 80%;
+    }
+    .icon{
+            transition: all 100ms linear;
+            background-color: #FFF5E4;
+            margin-top: 15%;
+            margin-left: 4%;
+            height: 60%;
+            width: 70%;
+            font-size: 26px;
+            border-radius: 20px;
+            border: 3px solid #fff;
+            text-align: center;
+            color: #FFACAC;
+            cursor: pointer;
+        }
+        .icon:hover{
+            transition: all 200ms linear;
+            background-color: #FFACAC;
+            border:  3px solid #fff;
+            color: #FFF;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }

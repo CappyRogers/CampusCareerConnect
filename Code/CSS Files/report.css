@@ -1,0 +1,134 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	background-image: url(bgg.svg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+ h1 {
+            text-align: center;
+            border: 3px solid white;
+            color: #fff;
+            padding: 1%;
+            font-family: 'Bruno Ace SC', cursive;
+            margin-top: 2%;
+            background-color: rgba(0, 0, 0, 0.61);
+	  		backdrop-filter: blur(5px);
+        }
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: linear-gradient(to right, #8E33E5, #3604EA, #8E33E5);
+    border-bottom: 2px solid #fff;
+    margin: 0px;
+    height: 105px;
+    }
+.Lspan{
+        width: 20%;
+        height: auto;
+        margin-left: 5%;
+    }
+    .Cspan{
+        width: 80%;
+        margin: auto;
+        margin-left: 11%;
+        color: #fff;
+    }
+    .Rspan{
+        width: 20%;
+        height: auto;
+        margin-left: 75%;
+    }
+p{
+	margin: auto;
+	padding-top: 1%;
+	font-size: 28;
+	text-align: center;
+	width: 70%;
+	margin-top: 0px;
+}
+		.icon{
+			transition: all 100ms linear;
+			background-color: #ffffff;
+			margin-top: 15%;
+			height: 60%;
+			width: 70%;
+			font-size: 26;
+			border-radius: 20px;
+			border: 3px solid #C47AFF;
+			text-align: center;
+			color: #C47AFF;
+			cursor: pointer;
+		}
+		.icon:hover{
+			transition: all 200ms linear;
+			background-color:  #C47AFF;
+			border:  3px solid #ffffff;
+			color: #ffffff;
+			box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+		}
+.rectable{
+			background-color: #443C68;
+			margin: auto;
+			border-collapse: collapse;
+    		width: 80%;
+    		border: 2px solid #fff;
+    		cellspacing: 0;
+    		cellpadding: 3;
+    		background-color: rgba(0, 0, 0, 0.61);
+  			backdrop-filter: blur(5px);
+		}
+			th, td {
+		    text-align: left;
+		    border: 2px solid #fff;
+		    color: white;
+		  	}
+
+		  th {
+		  	padding: 15px;
+		  	text-align: center;
+		  	font-size: 30px;
+		    background-color: #6D67E4;
+		    font-weight: bold;
+		    color: #fff;
+		    position: sticky;
+		    font-family: 'Bruno Ace SC', cursive;
+		  }
+
+		  tr:nth-child(even) {
+		    background-color:#3F0071 ;
+		  }
+
+		  tr:hover {
+		    transition: all 300ms linear;
+			box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+		    background-color:transparent;
+		  }
+
+		  td:first-child {
+		    border-left: 0;
+		  }
+
+		  td:last-child {
+		    border-right: 0;
+		  }
+
+		  td {
+		  	padding: 8px;
+		  	padding-left: 5%;
+		  	font-size: 18px;
+		    border-top: 0;
+		    border-bottom: 0;
+		    font-weight: 500;
+		    font-family: 'Comfortaa', cursive;
+		  }
+.spec{
+	padding: 8px;
+	font-size: 28px;
+	font-weight: 600;
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+}
